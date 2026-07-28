@@ -8,6 +8,7 @@ CREATE TABLE shirts
 	last_worn int
 );
 
+-- add data to table 
 INSERT INTO shirts (article, color, shirt_size, last_worn)  
 VALUES 
 	('t-shirt', 'white', 'S', 10),
@@ -22,37 +23,41 @@ VALUES
 INSERT INTO shirts (color, article, shirt_size, last_worn)
 VALUES ('Purple', 'Polo Shirt', 'M', 50);
 
+-- check table
 DESC shirts;
 
 SELECT * FROM shirts;
 
+-- Select challenges: 
 SELECT article, color FROM shirts;
 
 SELECT article, color, shirt_size, last_worn FROM shirts
 WHERE shirt_size = 'M';
 
+-- Update challenges:
 UPDATE shirts SET shirt_size = 'L'
 WHERE article = 'Polo shirt';
 
-SELECT* FROM shirts;
+SELECT* FROM shirts; -- to check table
 
 UPDATE shirts SET last_worn = 0
 WHERE LAST_worn = 15;
 
-SELECT* FROM shirts;
+SELECT* FROM shirts; -- to check table
 
 UPDATE shirts SET color = 'off white', shirt_SIZE = 'XS'
 WHERE color = 'white';
 
-SELECT* FROM shirts;
+SELECT* FROM shirts; -- to check table
 
+-- DELETE challenges:
 DELETE FROM shirts
 WHERE last_worn >= 200;
 
 DELETE FROM shirts 
 WHERE article = 'tank top';
 
-SELECT * FROM shirts;
+SELECT * FROM shirts; -- to check table
 
 DELETE FROM shirts;
 
