@@ -1,0 +1,24 @@
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# VS Code
+.vscode/
+
+# JetBrains IDEs
+.idea/
+*.iml
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# MySQL dumps
+*.sql.bak
+
+# Logs
+*.log
