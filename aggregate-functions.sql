@@ -111,7 +111,20 @@ SELECT
 FROM books
 GROUP BY author_lname;
 
+SELECT 
+	author_lname, 
+	COUNT(*), 
+	SUM(pages)
+FROM books
+GROUP BY author_lname;
 
+-- AVG
+
+SELECT 
+	concat(author_lname, ', ', author_fname) AS author,
+	avg(pages)
+FROM books
+GROUP BY author;
 
 
 
