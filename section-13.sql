@@ -60,9 +60,53 @@ JOIN orders
 	ON customers.id = orders.customer_id
 ORDER BY amount;
  
+ -- INNER JOIN WITH GROUP BY
+
+SELECT 
+	customers.id,
+	sum(amount) AS total
+FROM customers
+JOIN orders
+	ON orders.customer_id = customers.id
+GROUP BY customers.id
+ORDER BY total;
  
- 
- 
+-- LEFT JOIN
+
+SELECT
+	first_name,
+	last_name,
+	order_date,
+	amount
+FROM customers
+LEFT JOIN 
+	orders
+	ON orders.customer_id = customers.id;
+
+-- LEFT JOIN WITH GROUP BY
+
+SELECT
+	first_name,
+	last_name,
+	ifnull(sum(amount), 0) AS money_spent
+FROM customers
+LEFT JOIN 
+	orders
+	ON orders.customer_id = customers.id
+GROUP BY first_name, last_name
+ORDER BY money_spent;
+
+-- RIGHT JOIN
+SELECT 
+	first_name,
+	last_name,
+	order_date,
+	amount
+FROM customers
+RIGHT JOIN orders
+ON customers.id = orders.customer_id;
+
+
  
  
  
