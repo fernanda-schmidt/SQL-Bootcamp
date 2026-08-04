@@ -107,7 +107,11 @@ RIGHT JOIN orders
 ON customers.id = orders.customer_id;
 
 
- 
+ -- ON DELETE CASCADE
+ -- when creating a table, on the foreign key add: ON DELETE CASCADE
+-- it will delete all info on the connected tables
+
+
  
  
  
