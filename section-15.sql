@@ -55,7 +55,10 @@ FROM full_reviews
 GROUP BY released_year, genre WITH ROLLUP;
 
 -- SQL MODES BASICS
+SELECT @@GLOBAL.sql_mode;
+SELECT @@SESSION.sql_mode;
 
+-- 
 
 
 
