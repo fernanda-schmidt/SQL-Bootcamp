@@ -99,6 +99,18 @@ SELECT
 FROM employees ORDER BY department;
 
 -- NTILE()
+SELECT 
+	emp_no,
+	department,
+	salary,
+	NTILE(4) OVER(
+			PARTITION BY department 
+			ORDER BY salary DESC ) AS salary_qt
+FROM employees
+ORDER BY department;
+
+-- FIRST_VALUE
+
 
 
 
